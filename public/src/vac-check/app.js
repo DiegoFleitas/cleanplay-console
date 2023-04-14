@@ -171,9 +171,10 @@ const parseInput = (input) => {
 
 const parseSteamId3 = (data, index) => {
   STATE.isTF2 = true;
-  let rawId = data[index];
-  let id64 = getId(rawId);
+  const rawId = data[index];
+  const id64 = getId(rawId);
   const name = data[index - 1].replaceAll('"', "");
+  // console.log(id64, name);
   STATE.vacLookup[id64] = {
     name,
     id: id64,
@@ -182,9 +183,11 @@ const parseSteamId3 = (data, index) => {
 
 const parseSteamId = (data, index) => {
   STATE.isCSGO = true;
-  let rawId = data[index];
-  let id64 = getId(rawId);
+  const rawId = data[index];
+  const id64 = getId(rawId);
+  const name = data[index - 1].replaceAll('"', "");
+  // console.log(id64, name);
   STATE.vacLookup[id64] = {
-    name: data[index - 1],
+    name: name,
   };
 };

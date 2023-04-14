@@ -5,7 +5,6 @@ export const getId = (inputSteamID) => {
     const steamID = new SteamID(inputSteamID);
     const steam64identifier = steamID.getSteamID64();
     console.log(inputSteamID, steam64identifier);
-    debugger;
     return steam64identifier;
   } catch (error) {
     console.log(`Invalid Steam ID: ${inputSteamID}`, error);
